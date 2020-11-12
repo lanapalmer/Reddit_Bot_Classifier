@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bot or Not? Bot Classification on Reddit.</title>
+    <script src='static/Chart.min.js'></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  </head>
+  <body>
+    <div id="page-wrap">
+    <div class = "classification" style="margin:auto">
+      <h1>Bot or Not? Bot Classification on Reddit.</h1>
+      <p>The model predicts that this user is:</p>
+      <h1>{{ res_var }}</h1>
+
+      <p>Based on this model, the probability that this <b>is a bot</b> is {{ b_prob_var }}%, and the probability that it is <b>not a bot is</b> {{ nb_prob_var }}</p>
+
+    <canvas id="myChart" width="400" height="400" style="margin:auto"></canvas>
+    <script>
+      // Global parameters:
+      // do not resize the chart canvas when its container does (keep at 600x400px)
+      Chart.defaults.global.responsive = false;
+      Chart.defaults.scale.ticks.beginAtZero = true;
+      Chart.defaults.scale.gridLines.display = false;
+      Chart.defaults.global.legend.display = false;
+      Chart.defaults.global.defaultFontFamily = 'Domine';
+      Chart.defaults.global.title.display = true;
+      Chart.defaults.global.title.text = "Feature Importance: Gradient Boosting Model";
+      Chart.defaults.global.title.fontColor = "Black";
+
+
+      // define the chart data
+      var chartData = {
+        labels : [{% for item in labels %}
+                   "{{item}}",
+                  {% endfor %}],
+        datasets : [{
+          backgroundColor: "rgba(75,192,192,0.4)",
+          data : [{% for item in values %}
+                  {{item}},
+                {% endfor %}],
+              }]
+            }
+
+      // get chart canvas
+      var ctx = document.getElementById("myChart").getContext("2d");
+
+      // create the chart using the chart canvas
+      var myChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: chartData,
+
+      });
+</script>
+
+  </div>
+    <div class="bdiv" style="margin:auto">
+        <a class="aButton" href="/" style="margin:auto">RELOAD</a>
+  </div>
+</div>
+</body>
+</html>

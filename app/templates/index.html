@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400;500;600;700&family=Josefin+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <meta charset="utf-8">
+   
+   <title>Bot or Not? Bot Classification on Reddit.</title>
+  </head>
+  <body>
+    <h1>Bot or Not? Bot Classification on Reddit.</h1>
+    <p>Enter a comment below to get a bot-or-not prediction:</p>
+    <form id= "input" method="post" action = "prediction">
+        <ul class="form-style-1">
+            <li><label>Comment Text <span class="required">*</span></label>
+                <input type="text" id="Comment" name="Comment" class="field-long field-textarea" placeholder="The first ever reddit comment complained about 'comment spam'" />
+                 </li>
+            <li><label>Score: (Total upvotes/downvotes: This may be a negative number) <span class="required">*</span></label>
+            <input type="text" id="Score" name="Score" class="field-short" placeholder="2"/>
+        </li>
+        <li>
+        <input id="button" type="submit" value="SUBMIT" />
+    </li>
+</ul>
+</form>
+</body>
+</html>
