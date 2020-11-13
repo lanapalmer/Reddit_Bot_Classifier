@@ -21,6 +21,7 @@
 ![Model Evaluation Notebook](https://github.com/lanapalmer/Reddit_Bot_Classifier/blob/master/RBC_4_Model_Eval_Analysis.ipynb)
 
 ## Model Deployment and Predictions ##
+![Flask App Repository](https://github.com/lanapalmer/Reddit_Bot_Classifier/tree/master/app)
 I built a Flask app which takes a user-submitted Reddit comment and score, processes the data, and provides a prediction with probabilities. 
 
 ![Deployed Model Screenshot](https://github.com/lanapalmer/Reddit_Bot_Classifier/blob/master/Figures/DeployedScreenshot.png)
