@@ -31,6 +31,19 @@ The data did not require extensive cleaning, as null values were excluded from t
 ## Exploratory Data Analysis ## 
 ![EDA Notebook](https://github.com/lanapalmer/Reddit_Bot_Classifier/blob/master/RBC_2_EDA.ipynb)
 
+My initial EDA was focused on quantitative analysis of existing features:
+
+#### 1. Score ####
+
+The median for both Bots and Non-Bots was 1, which is unsurprising given that all Reddit comments have a default score of 1. However, the mean and standard deviation differed substantially: Bots had a mean score of 3.59 and a standard deviation of 27.54, while non-bots had a mean of 91.16 and a standard deviation of 687. Clearly, users were engaging more with non-bots than bots, with both upvotes (positive) and downvotes (negative).
+
+![Score Image](https://github.com/lanapalmer/Reddit_Bot_Classifier/blob/master/Figures/Score1.png)
+
+
+#### 2. Unique Subreddits ####
+
+#### 3. Time Span ####
+
 ## Feature Engineering ##
 ![Feature Engineering Notebook](https://github.com/lanapalmer/Reddit_Bot_Classifier/blob/master/RBC_3_FeatureEngineering_PreProcessing.ipynb)
 
