@@ -79,12 +79,14 @@ At the completion of feature engineering, my dataset included a total of 1010 fe
 
 ## Algorithms and Machine Learning ## 
 
-I selected scikit-learn Logistic Regression and Gradient Boosting algorithms for my initial model.
+I selected Logistic Regression and Gradient Boosting algorithms for my initial model.
 
-The Logistic Regression model 
+The Logistic Regression model had an accuracy rate of 85% on the test set. After optimizing features using Grid Search, the Gradient Boosting model had an accuracy rate of 90% on the test set. I opted to use the Gradient Boosting model for the remainder of my analysis.
 
 ## Model Evaluation ## 
 ![Model Evaluation Notebook](https://github.com/lanapalmer/Reddit_Bot_Classifier/blob/master/RBC_4_Model_Eval_Analysis.ipynb)
+
+![Feature Importance](https://github.com/lanapalmer/Reddit_Bot_Classifier/blob/master/Figures/feature_importance.png)
 
 ## Model Deployment and Predictions ##
 ![Flask App Repository](https://github.com/lanapalmer/Reddit_Bot_Classifier/tree/master/app)
