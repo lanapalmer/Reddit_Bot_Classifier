@@ -4,7 +4,7 @@
 
 ## Introduction ##
 
-While the word ‘bot’ may evoke images of artificially intelligent robots run amok, most bots found on online message boards are simple software programs written to execute commands and automate mundane tasks. Bots on Reddit range from the benign, such as ![u/JImmyButler](https://www.reddit.com/user/JlmmyButler), a bot that replies to users with compliments, the administrative, like the many moderator bots used to help subreddit ‘mods’, and the simply annoying, such as bots that spam URLS. 
+While the word ‘bot’ may evoke images of artificially intelligent robots run amok, most bots found on online message boards are simple software programs written to execute commands and automate mundane tasks. Bots on Reddit range from the benign, such as ![u/JImmyButler](https://www.reddit.com/user/JlmmyButler), a bot that replies to users with compliments; the administrative, like the many moderator bots used to help subreddit ‘mods’; and the simply annoying, such as bots that spam URLS. 
 
 While these 'friendly' bots may seem somewhat innocuous, the growing number of bots on online platforms provides cause for serious concern. Social media platforms Facebook and Twitter are currently setting new precedents for free speech vs misinformation, and the proliferation of bots and 'inauthentic' accounts only exacerbate these concerns. Left unchecked, bots can pose a threat to public health during a pandemic, the democratic process during an election, and the stock market in the midst of a global recession. 
 
