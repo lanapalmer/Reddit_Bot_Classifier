@@ -86,6 +86,10 @@ The Logistic Regression model had an accuracy rate of 85% on the test set. After
 ## Model Evaluation ## 
 ![Model Evaluation Notebook](https://github.com/lanapalmer/Reddit_Bot_Classifier/blob/master/RBC_4_Model_Eval_Analysis.ipynb)
 
+![Classification Report](https://github.com/lanapalmer/Reddit_Bot_Classifier/blob/master/Figures/Classification_Report.png)
+
+![Confusion Matrix](https://github.com/lanapalmer/Reddit_Bot_Classifier/blob/master/Figures/con_matrix.png)
+
 ![Feature Importance](https://github.com/lanapalmer/Reddit_Bot_Classifier/blob/master/Figures/feature_importance.png)
 
 ## Model Deployment and Predictions ##
@@ -97,6 +101,13 @@ I built a Flask app which takes a user-submitted Reddit comment and score, proce
 You can view the app at https://reddit-bot-or-not.herokuapp.com/, or on my website: http://lanapalmer.io/reddit-bot-classifier/
 
 ## Conclusion and Caveats ## 
+
+The gradient boosting classifier was able to perform with 90% accuracy on the testing data set, providing evidence that bot comments are distinguishable from non-bots.
+
+** A few caveats **
+
+The size of my non-bot user group is on the small size. While I attempted to use a random selection process, I may have introduced bias based on my own opinion of what 'non-bot' user comments look like.  Because several of my non-bot users were well-known public figures, I believe the scores for non-bots are skewed higher than they would be for the entire population of Reddit users.
+
 
 ## Next Steps ##
 
