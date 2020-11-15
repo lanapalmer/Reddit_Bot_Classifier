@@ -155,7 +155,7 @@ The gradient boosting classifier was able to perform with 90% accuracy on the te
 
 **A few caveats:**
 
-The size of my non-bot user group is on the small size. While I attempted to use a random selection process, I may have introduced bias based on my own opinion of what 'non-bot' user comments look like.  Because several of my non-bot users were well-known public figures, I believe the scores for non-bots are skewed higher than they would be for the entire population of Reddit users.
+My non-bot user group is rather small. While I attempted to use a random selection process, I may have introduced bias based on my own opinion of what 'non-bot' user comments look like.  Because several of my non-bot users were well-known public figures, I believe the scores for non-bots are skewed higher than they would be for the entire population of Reddit users.
 
 
 ## Next Steps ##
