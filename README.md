@@ -86,14 +86,63 @@ The Logistic Regression model had an accuracy rate of 85% on the test set. After
 ## Model Evaluation ## 
 ![Model Evaluation Notebook](https://github.com/lanapalmer/Reddit_Bot_Classifier/blob/master/RBC_4_Model_Eval_Analysis.ipynb)
 
-![Classification Report](https://github.com/lanapalmer/Reddit_Bot_Classifier/blob/master/Figures/Classification_Report.png)
+Accuracy rate on the test set of 4141 comments was 90%, with the following breakdown:
+
+True Positives (Accurately classified bot comments as bots): 1970
+True Negatives (Accurately classified non-bot comments as non-bots): 1756
+False Positives (Classified non-bot comments as bots): 123
+False Negatives (Classified bot comments as non-bots): 292
 
 ![Confusion Matrix](https://github.com/lanapalmer/Reddit_Bot_Classifier/blob/master/Figures/con_matrix.png)
 
+For bot comments, precision rate was .87 and recall was .93
+For non-bot comments, precision was .93 and recall was .86
+
+![Classification Report](https://github.com/lanapalmer/Reddit_Bot_Classifier/blob/master/Figures/Classification_Report.png)
+
+This suggests that the model is more likely to err by classifying bot comments as non-bots than non-bots as bots. In this use case this is likely the best outcome, as unfairly flagging human users as bots would be undesirable to a social network platform.
+
+### Feature Importance ###
+
+I used the ![SHAP](https://github.com/slundberg/shap) (SHapley Additive exPlanations) library to evaluate feature importance in the gradient boosting model.
+
+As we can see in the bar chart below, the most importance features were:
+
+* **Average Word Length**
+* **Comment Length**
+* **Lexicon Count**
+* **Counts_Reddit.com** (The number of times that reddit.com appeared in the comment)
+* **Score**
+* **Syllable Count**
+* **Read Ease**
+
 ![Feature Importance](https://github.com/lanapalmer/Reddit_Bot_Classifier/blob/master/Figures/feature_importance.png)
+
+Let's dig into individual predictions. 
+
+Below is the explanation plot for a comment correctly classified as a non-bot:
+
+![Non-Bot Explainer Plot](https://github.com/lanapalmer/Reddit_Bot_Classifier/blob/master/Figures/Shap_plot_NotBot.png)
+
+Each of the blue features (Score, LexCount, CommentCharacters, etc.) are serving to push this comment away from a positive ('Bot') classification. 
+Below is the original comment:
+
+![NonBot Comment](https://github.com/lanapalmer/Reddit_Bot_Classifier/blob/master/Figures/Non_Bot_comment.png)
+
+By contrast, let's look at a comment that was correctly classified as a bot:
+
+![Bot Explainer Plot](https://github.com/lanapalmer/Reddit_Bot_Classifier/blob/master/Figures/Shap_plot_bot.png)
+
+Each of the red features (Score, Comment Length, Flair Count, etc) are serving to push this comment towards a positive ('Bot') classification. 
+
+![Bot Comment](https://github.com/lanapalmer/Reddit_Bot_Classifier/blob/master/Figures/Bot_comment.png)
+
+The model predicted a .83 probability that this comment was made by a bot. 
+
 
 ## Model Deployment and Predictions ##
 ![Flask App Repository](https://github.com/lanapalmer/Reddit_Bot_Classifier/tree/master/app)
+
 I built a Flask app which takes a user-submitted Reddit comment and score, processes the data, and provides a prediction with probabilities. 
 
 ![Deployed Model Screenshot](https://github.com/lanapalmer/Reddit_Bot_Classifier/blob/master/Figures/DeployedScreenshot.png)
@@ -104,7 +153,7 @@ You can view the app at https://reddit-bot-or-not.herokuapp.com/, or on my websi
 
 The gradient boosting classifier was able to perform with 90% accuracy on the testing data set, providing evidence that bot comments are distinguishable from non-bots.
 
-** A few caveats **
+**A few caveats:**
 
 The size of my non-bot user group is on the small size. While I attempted to use a random selection process, I may have introduced bias based on my own opinion of what 'non-bot' user comments look like.  Because several of my non-bot users were well-known public figures, I believe the scores for non-bots are skewed higher than they would be for the entire population of Reddit users.
 
